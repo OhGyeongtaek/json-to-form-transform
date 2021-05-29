@@ -28,20 +28,3 @@ Vue.component(V_FILE, VFileInput);
 Vue.component(V_TEXT, VTextField);
 Vue.component(V_AUTOCOMPLETE, VAutocomplete);
 Vue.component(V_TEXTAREA, VTextarea);
-
-// const prototype = Vue.prototype;
-
-// const test = (): string => {
-//   alert("1234");
-//   return "test";
-// };
-
-// if (!Object.prototype.hasOwnProperty.call(prototype, "$showSnack")) {
-//   prototype.test = test;
-// }
-
-// declare module "vue/types/vue" {
-//   interface Vue {
-//     test: () => string;
-//   }
-// }

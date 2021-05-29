@@ -2,15 +2,7 @@
   <div>
     <template v-for="(item, idx) in items">
       <v-row :key="`row-${idx}`">
-        <template v-if="item.type === 'children'">
-          <template v-for="(child, childIdx) in item.children">
-            <JsonFormItem :item="child" :key="`child-item-${childIdx}`"/>
-          </template>
-        </template>
-
-        <template v-else>
-          <JsonFormItem :item="item" :key="`item-${idx}`"/>
-        </template>
+        <component :is="getComponent(item)" :item="item"></component>
       </v-row>
     </template>
   </div>
@@ -18,14 +10,27 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { JsonToFormProps } from "@/plugins/json-to-form";
+import { JsonToFormProps, INPUT_TYPE_CHILDREN } from "@/plugins/json-to-form";
 import JsonFormItem from "./JsonFormItem.vue";
+import JsonFormChildrenItem from "./JsonFormChildrenItem.vue";
+
+type ItemTypes = "JsonFormItem" | "JsonFormChildrenItem";
 
 @Component({
-  components: { JsonFormItem },
+  components: { JsonFormItem, JsonFormChildrenItem },
 })
 export default class JsonFormItems extends Vue {
   @Prop({ default: [] })
   items!: JsonToFormProps[];
+
+  private getComponent(item: JsonToFormProps): ItemTypes {
+    switch (item.type) {
+      case INPUT_TYPE_CHILDREN:
+        return "JsonFormChildrenItem";
+
+      default:
+        return "JsonFormItem";
+    }
+  }
 }
 </script>
