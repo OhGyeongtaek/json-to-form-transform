@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <JsonFormItems :items="items" />
+    <v-container>
+      <JsonFormItems :items="items" />
+    </v-container>
   </v-app>
 </template>
 
@@ -23,6 +25,7 @@ export default class App extends Vue {
           cols: 3,
           props: {
             label: "테스트",
+            solo: true,
           }
         },
         {
