@@ -17,6 +17,7 @@ export type JsonToInputTypes =
 export type JsonToFormProps = {
   type: JsonToInputTypes;
   props?: unknown;
+  label?: string;
   children?: JsonToFormChildrenProps[];
 };
 
