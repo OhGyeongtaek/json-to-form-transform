@@ -26,7 +26,7 @@ export default class App extends Vue {
           props: {
             label: "테스트",
             solo: true,
-          }
+          },
         },
         {
           type: "v-text",

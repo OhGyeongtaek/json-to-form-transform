@@ -29,3 +29,17 @@ vuetify에서 json객체를 form 양식으로 변경해주는 기능 구현중
 > ## v-textarea
 
 행에 textarea가 들어갈 경우 사용하는 타입
+
+> ## 단위테스트를 위한 모듈 설치
+
+    $ npm install -g jest
+
+> ## 단위테스트를 실행
+
+    $ jest
+
+> ## 실행방법
+
+    $ cd ./json-to-from-transform
+    $ yarn
+    $ yarn serve
