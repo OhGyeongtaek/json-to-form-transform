@@ -77,7 +77,7 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,vue}",
+      "**/*.{js}",
       "!**/node_modules/**"
     ]
   }
